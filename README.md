@@ -3,6 +3,4 @@ Very first 42 school project about creating a library with helpful functions tha
 
 The project will be updated over time and new functions will be continously added to the portfolio.
 
-Use the Makefile to compile the library. 
-
-this is a change
+Use the Makefile to compile the library.
