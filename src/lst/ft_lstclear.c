@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 22:47:41 by tomkrueger        #+#    #+#             */
-/*   Updated: 2021/11/03 00:44:14 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2021/12/03 19:42:36 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(p, del);
 		p = next;
 	}
-	*lst = 0;
+	*lst = NULL;
 }
