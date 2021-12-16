@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 19:01:10 by tomkrueger        #+#    #+#             */
-/*   Updated: 2021/11/03 00:43:19 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2021/12/16 15:04:46 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 /* This function writes a string followed by a newline character to 
 filedescriptor fd */
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	return (ft_putstr_fd(s, fd) + write(fd, "\n", 1));
 }
