@@ -6,13 +6,13 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 20:11:55 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/19 20:12:32 by tkruger          ###   ########.fr       */
+/*   Updated: 2021/12/19 21:07:39 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int	ft_min(int count, ...)
+int	ft_max(int count, ...)
 {
 	va_list	args;
 	int		tmp;
