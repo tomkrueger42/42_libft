@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 13:32:25 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/19 20:27:06 by tkruger          ###   ########.fr       */
+/*   Created: 2021/12/19 20:13:04 by tkruger           #+#    #+#             */
+/*   Updated: 2021/12/19 20:14:25 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-/* This function converts a string to an integer */
-int	ft_atoi(const char *str)
+int	ft_abs(int a)
 {
-	int	sign;
-	int	result;
-
-	sign = 1;
-	result = 0;
-	while (*str != '\0' && ft_iswhitespace(*str) == 1)
-		str++;
-	if ((*str != '+' && *str != '-' && !ft_isdigit(*str)))
-		return (0);
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
-	{
-		sign *= -1;
-		str++;
-	}
-	while (ft_isdigit(*str))
-		result = (result * 10) + *str++ - '0';
-	return (sign * result);
+	if (a < 0)
+		a = -a;
+	return (a);
 }

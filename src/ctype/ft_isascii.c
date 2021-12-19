@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 12:31:59 by tkruger           #+#    #+#             */
-/*   Updated: 2021/11/03 00:44:37 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2021/12/19 20:19:31 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 /* This function checks if char c is an ascii character */
 int	ft_isascii(int c)
 {
-	return ((c >= 0) && (c <= 127) ? 1 : 0);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

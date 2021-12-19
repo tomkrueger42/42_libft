@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 13:32:25 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/19 20:27:06 by tkruger          ###   ########.fr       */
+/*   Created: 2021/12/19 20:11:55 by tkruger           #+#    #+#             */
+/*   Updated: 2021/12/19 20:12:32 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-/* This function converts a string to an integer */
-int	ft_atoi(const char *str)
+int	ft_min(int count, ...)
 {
-	int	sign;
-	int	result;
+	va_list	args;
+	int		tmp;
+	int		largest;
 
-	sign = 1;
-	result = 0;
-	while (*str != '\0' && ft_iswhitespace(*str) == 1)
-		str++;
-	if ((*str != '+' && *str != '-' && !ft_isdigit(*str)))
-		return (0);
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
+	largest = INT32_MIN;
+	va_start(args, count);
+	while (count-- > 0)
 	{
-		sign *= -1;
-		str++;
+		tmp = va_arg(args, int);
+		if (largest < tmp)
+			largest = tmp;
 	}
-	while (ft_isdigit(*str))
-		result = (result * 10) + *str++ - '0';
-	return (sign * result);
+	return (largest);
 }
