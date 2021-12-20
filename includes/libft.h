@@ -6,7 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/19 20:39:00 by tkruger          ###   ########.fr       */
+/*   Updated: 2021/12/20 18:11:03 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -40,6 +41,7 @@ int		ft_toupper(int c);
 
 int		ft_abs(int num);
 int		ft_diff(int a, int b);
+bool	ft_isint(char *str);
 int		ft_max(int count, ...);
 int		ft_min(int count, ...);
 
