@@ -6,11 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/12/21 22:40:04 by tkruger          ###   ########.fr       */
-=======
-/*   Updated: 2021/12/20 18:11:03 by tkruger          ###   ########.fr       */
->>>>>>> b1fba0e3d664a14e7fc72cd6c75197fc382b47e1
+/*   Updated: 2021/12/21 22:58:08 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +17,8 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-<<<<<<< HEAD
-# include <stdint.h>
-=======
 # include <stdbool.h>
->>>>>>> b1fba0e3d664a14e7fc72cd6c75197fc382b47e1
+# include <stdint.h>
 
 typedef struct s_list
 {
@@ -70,6 +63,7 @@ int		ft_lstsize(t_list *lst);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_free_all(int count, ...);
+void	ft_free(int count, va_list pointers);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
