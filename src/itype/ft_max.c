@@ -6,7 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 20:11:55 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/21 22:42:37 by tkruger          ###   ########.fr       */
+/*   Updated: 2021/12/21 22:49:37 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	ft_max(int count, ...)
 		if (largest < tmp)
 			largest = tmp;
 	}
+	va_end(numbers);
 	return (largest);
 }

@@ -6,7 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 22:31:36 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/21 22:40:59 by tkruger          ###   ########.fr       */
+/*   Updated: 2021/12/21 22:50:18 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void ft_free_all(int count, ...)
 		if (ptr != NULL)
 			free(ptr);
 	}
+	va_end(pointers);
 }
