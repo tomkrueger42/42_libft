@@ -6,7 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 22:54:12 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/21 22:56:28 by tkruger          ###   ########.fr       */
+/*   Updated: 2021/12/21 23:08:26 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_free(int count, va_list pointers)
 
 	while (count-- > 0)
 	{
-		ptr = va_arg(pointers, uintptr_t);
+		ptr = va_arg(pointers, unsigned long);
 		if (ptr != NULL)
 			free(ptr);
 	}
