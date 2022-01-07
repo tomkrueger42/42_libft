@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 16:28:47 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/07 18:18:00 by tkruger          ###   ########.fr       */
+/*   Created: 2021/06/23 13:01:55 by tkruger           #+#    #+#             */
+/*   Updated: 2022/01/07 18:24:02 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-/* This function searches for the first occurence of a char in a string and
-returns its address */
-char	*ft_strchr(const char *s, int c)
+/* This function allocates memory and copies both strings joined together 
+into it */
+char	*ft_strjoin_free(char const *s1, char const *s2)
 {
-	int	i;
+	char	*new;
+	int		i;
+	int		j;
 
+	if (!s1 || !s2)
+		return (0);
 	i = 0;
-	while (s[i])
+	j = 0;
+	new = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (new == NULL)
+		return (NULL);
+	while (s1[i] != 0)
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
+		new[i] = s1[i];
 		i++;
 	}
-	if (c == 0)
-		return ((char *)&s[i]);
-	return (NULL);
+	while (s2[j] != 0)
+	{
+		new[i + j] = s2[j];
+		j++;
+	}
+	new[i + j] = 0;
+	free((void *)s1);
+	free((void *)s2);
+	return (new);
 }

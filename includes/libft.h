@@ -6,7 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/21 23:17:24 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/01/07 18:23:35 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ int		ft_isprint(int c);
 int		ft_iswhitespace(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+/* get_next_line */
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_need_for_read(int fd, char *str, int *end_of_file, int rv);
+char	*ft_strtail_free(const char *s1, int c);
 
 /* itype */
 
@@ -80,9 +90,11 @@ int		ft_putstr_fd(char *s, int fd);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
+int		ft_strchr_int(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	*ft_strjoin_free(char const *s1, char const *s2);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, int dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, int dstsize);
