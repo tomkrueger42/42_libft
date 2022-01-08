@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 11:35:45 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/07 18:44:49 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/01/08 16:05:51 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int	main(void)
 	}
 	fclose(o);
 	close(i);
+	system("leaks a.out");
 	return (0);
 }

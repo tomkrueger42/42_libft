@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+         #
+#    By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 12:53:26 by tkruger           #+#    #+#              #
-#    Updated: 2022/01/07 18:49:01 by tkruger          ###   ########.fr        #
+#    Updated: 2022/01/08 16:00:04 by tomkrueger       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ SRC += $(STRDIR)/ft_atoi.c $(STRDIR)/ft_itoa.c $(STRDIR)/ft_split.c \
 		$(STRDIR)/ft_strjoin_free.c $(STRDIR)/ft_strjoin.c $(STRDIR)/ft_strlcat.c $(STRDIR)/ft_strlcpy.c \
 		$(STRDIR)/ft_strlen.c $(STRDIR)/ft_strmapi.c $(STRDIR)/ft_strncmp.c \
 		$(STRDIR)/ft_strnstr.c $(STRDIR)/ft_strrchr.c $(STRDIR)/ft_strtrim.c \
-		$(STRDIR)/ft_substr.c
+		$(STRDIR)/ft_substr_free.c $(STRDIR)/ft_substr.c
 
 
 # **************************************************************************** #

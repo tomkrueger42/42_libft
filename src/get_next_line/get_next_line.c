@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/07 18:21:36 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/01/08 15:57:20 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+#include <stdio.h>
 
 char	*get_next_line(int fd)
 {
@@ -24,7 +25,7 @@ char	*get_next_line(int fd)
 	str = ft_need_for_read(fd, str, &end_of_file, 0);
 	if (!str)
 		return (NULL);
-	if (str && ft_strchr_int(str, '\n') >= 0)
+	if (str && ft_strchr_int(str, '\n') != -1)
 	{
 		r = ft_substr(str, 0, ft_strchr_int(str, '\n'));
 		str = ft_strtail_free(str, ft_strchr_int(str, '\n'));
@@ -45,7 +46,7 @@ char	*ft_need_for_read(int fd, char *str, int *end_of_file, int rv)
 {
 	char	*buf;
 
-	while (!ft_strchr_int(str, '\n') && *end_of_file == 0)
+	while (ft_strchr_int(str, '\n') == -1 && *end_of_file == 0)
 	{
 		buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 		if (buf == NULL)
@@ -72,15 +73,15 @@ char	*ft_need_for_read(int fd, char *str, int *end_of_file, int rv)
 char	*ft_strtail_free(const char *s1, int c)
 {
 	char	*p;
-	int		n;
+	int		len;
 	int		i;
 
 	i = 0;
-	n = ft_strlen(s1);
-	p = malloc(n - c + 1);
+	len = ft_strlen(s1);
+	p = malloc(len - c + 1);
 	if (p == NULL)
 		return (NULL);
-	while (i <= n - c)
+	while (i <= len - c)
 	{
 		p[i] = s1[i + c];
 		i++;
