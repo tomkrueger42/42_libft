@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/07 18:23:35 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/01/08 16:14:08 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		ft_toupper(int c);
 
 char	*get_next_line(int fd);
 char	*ft_need_for_read(int fd, char *str, int *end_of_file, int rv);
-char	*ft_strtail_free(const char *s1, int c);
 
 /* itype */
 
@@ -104,6 +103,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_substr_free(char const *s, unsigned int start, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

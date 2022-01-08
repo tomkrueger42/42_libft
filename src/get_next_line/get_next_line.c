@@ -6,12 +6,11 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/08 15:57:20 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/01/08 16:14:32 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
-#include <stdio.h>
 
 char	*get_next_line(int fd)
 {
@@ -28,12 +27,12 @@ char	*get_next_line(int fd)
 	if (str && ft_strchr_int(str, '\n') != -1)
 	{
 		r = ft_substr(str, 0, ft_strchr_int(str, '\n'));
-		str = ft_strtail_free(str, ft_strchr_int(str, '\n'));
+		str = ft_substr_free(str, ft_strchr_int(str, '\n'), ft_strlen(str));
 	}
 	else if (end_of_file == 1)
 	{
 		if (ft_strlen(str))
-			r = ft_strtail_free(str, 0);
+			r = ft_substr_free(str, 0, ft_strlen(str));
 		else
 			free(str);
 		str = NULL;
@@ -63,29 +62,9 @@ char	*ft_need_for_read(int fd, char *str, int *end_of_file, int rv)
 		if (ft_strchr_int(buf, '\0') < BUFFER_SIZE && fd != 1)
 			*end_of_file = 1;
 		if (!str)
-			str = ft_strtail_free(buf, 0);
+			str = ft_substr_free(buf, 0, ft_strlen(buf));
 		else
 			str = ft_strjoin_free(str, buf);
 	}
 	return (str);
-}
-
-char	*ft_strtail_free(const char *s1, int c)
-{
-	char	*p;
-	int		len;
-	int		i;
-
-	i = 0;
-	len = ft_strlen(s1);
-	p = malloc(len - c + 1);
-	if (p == NULL)
-		return (NULL);
-	while (i <= len - c)
-	{
-		p[i] = s1[i + c];
-		i++;
-	}
-	free((void *)s1);
-	return (p);
 }
