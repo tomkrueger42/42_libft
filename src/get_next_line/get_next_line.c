@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/08 16:14:32 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/01/09 23:30:14 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_next_line(int fd)
 	r = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0 || end_of_file == 2)
 		return (NULL);
-	str = ft_need_for_read(fd, str, &end_of_file, 0);
+	str = ft_need_for_read(fd, str, &end_of_file);
 	if (!str)
 		return (NULL);
 	if (str && ft_strchr_int(str, '\n') != -1)
@@ -36,14 +36,15 @@ char	*get_next_line(int fd)
 		else
 			free(str);
 		str = NULL;
-		end_of_file++;
+		end_of_file = 2;
 	}
 	return (r);
 }
 
-char	*ft_need_for_read(int fd, char *str, int *end_of_file, int rv)
+char	*ft_need_for_read(int fd, char *str, int *end_of_file)
 {
 	char	*buf;
+	int		read_value;
 
 	while (ft_strchr_int(str, '\n') == -1 && *end_of_file == 0)
 	{
@@ -51,13 +52,13 @@ char	*ft_need_for_read(int fd, char *str, int *end_of_file, int rv)
 		if (buf == NULL)
 			return (NULL);
 		ft_bzero(buf, BUFFER_SIZE + 1);
-		rv = read(fd, buf, BUFFER_SIZE);
-		if (rv < 0)
+		read_value = read(fd, buf, BUFFER_SIZE);
+		if (read_value < 0)
 		{
 			free(buf);
 			return (NULL);
 		}
-		if (rv == 0)
+		if (read_value == 0)
 			buf[0] = '\0';
 		if (ft_strchr_int(buf, '\0') < BUFFER_SIZE && fd != 1)
 			*end_of_file = 1;

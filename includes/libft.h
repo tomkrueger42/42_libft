@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/08 16:14:08 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/01/09 23:37:46 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		ft_toupper(int c);
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_need_for_read(int fd, char *str, int *end_of_file, int rv);
+char	*ft_need_for_read(int fd, char *str, int *end_of_file);
 
 /* itype */
 
