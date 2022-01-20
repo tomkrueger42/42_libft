@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+         #
+#    By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 12:53:26 by tkruger           #+#    #+#              #
-#    Updated: 2022/01/08 16:00:04 by tomkrueger       ###   ########.fr        #
+#    Updated: 2022/01/20 15:52:20 by tkruger          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ SRC += $(PUTDIR)/ft_putchar_fd.c $(PUTDIR)/ft_putendl_fd.c \
 #	str
 
 STRDIR = $(SDIR)/str
-SRC += $(STRDIR)/ft_atoi.c $(STRDIR)/ft_itoa.c $(STRDIR)/ft_split.c \
+SRC += $(STRDIR)/ft_atoi.c $(STRDIR)/ft_getnbrs.c $(STRDIR)/ft_itoa.c $(STRDIR)/ft_split.c \
 		$(STRDIR)/ft_strchr_int.c $(STRDIR)/ft_strchr.c $(STRDIR)/ft_strdup.c $(STRDIR)/ft_striteri.c \
 		$(STRDIR)/ft_strjoin_free.c $(STRDIR)/ft_strjoin.c $(STRDIR)/ft_strlcat.c $(STRDIR)/ft_strlcpy.c \
 		$(STRDIR)/ft_strlen.c $(STRDIR)/ft_strmapi.c $(STRDIR)/ft_strncmp.c \
