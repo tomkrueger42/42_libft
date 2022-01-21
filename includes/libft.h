@@ -6,7 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/20 15:51:48 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/01/21 19:21:03 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int		ft_putstr_fd(char *s, int fd);
 /* str */
 
 int		ft_atoi(const char *str);
+int		*ft_getnbrs_free(char *str);
 int		*ft_getnbrs(char *str);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
