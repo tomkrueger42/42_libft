@@ -6,17 +6,13 @@
 #    By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 12:53:26 by tkruger           #+#    #+#              #
-#    Updated: 2022/01/24 15:11:57 by tkruger          ###   ########.fr        #
+#    Updated: 2022/01/24 16:02:32 by tkruger          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
-#CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror -c
-#INC		=	./include/libft.h
 SDIR	=	./src
-#OBJ_PATH =	./objs/
-#OBJS	=	$(patsubst %c,$(OBJ_PATH)%o,$(SRC))
 
 # **************************************************************************** #
 #		SRC
@@ -86,7 +82,8 @@ all: $(NAME)
 
 clean:
 	@rm -f *.o *~
-	
+	@rm -rf *.dSYM
+
 fclean: clean
 	@rm -f $(NAME)
 
