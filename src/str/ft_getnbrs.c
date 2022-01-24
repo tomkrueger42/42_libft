@@ -6,12 +6,13 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:42:00 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/21 21:44:01 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/01/23 18:51:18 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/* This f() extracts all integers from a string seperated with blanks (int 32) */
 int	*ft_getnbrs(char *str)
 {
 	int		*nbrs;

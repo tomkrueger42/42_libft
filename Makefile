@@ -6,13 +6,17 @@
 #    By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 12:53:26 by tkruger           #+#    #+#              #
-#    Updated: 2022/01/21 19:21:32 by tkruger          ###   ########.fr        #
+#    Updated: 2022/01/24 15:11:57 by tkruger          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror -c
-SDIR = ./src
+NAME	=	libft.a
+#CC		=	gcc
+CFLAGS	=	-Wall -Wextra -Werror -c
+#INC		=	./include/libft.h
+SDIR	=	./src
+#OBJ_PATH =	./objs/
+#OBJS	=	$(patsubst %c,$(OBJ_PATH)%o,$(SRC))
 
 # **************************************************************************** #
 #		SRC
@@ -21,7 +25,7 @@ SDIR = ./src
 #	ctype
 
 CTYPEDIR = $(SDIR)/ctype
-SRC := $(CTYPEDIR)/ft_count_char.c $(CTYPEDIR)/ft_isalnum.c \
+SRC += $(CTYPEDIR)/ft_count_char.c $(CTYPEDIR)/ft_isalnum.c \
 		$(CTYPEDIR)/ft_isalpha.c $(CTYPEDIR)/ft_isascii.c \
 		$(CTYPEDIR)/ft_isdigit.c $(CTYPEDIR)/ft_isprint.c \
 		$(CTYPEDIR)/ft_iswhitespace.c $(CTYPEDIR)/ft_tolower.c \
@@ -30,13 +34,14 @@ SRC := $(CTYPEDIR)/ft_count_char.c $(CTYPEDIR)/ft_isalnum.c \
 #	get_next_line
 
 GNLDIR = $(SDIR)/get_next_line
-SRC := $(GNLDIR)/get_next_line.c
+SRC += $(GNLDIR)/get_next_line.c
 
 #	itype
 
 ITYPEDIR = $(SDIR)/itype
 SRC += $(ITYPEDIR)/ft_abs.c $(ITYPEDIR)/ft_diff.c $(ITYPEDIR)/ft_isint.c \
 		$(ITYPEDIR)/ft_max.c $(ITYPEDIR)/ft_min.c
+
 #	lst
 
 LSTDIR = $(SDIR)/lst
