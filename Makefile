@@ -6,7 +6,7 @@
 #    By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 12:53:26 by tkruger           #+#    #+#              #
-#    Updated: 2022/01/24 16:02:32 by tkruger          ###   ########.fr        #
+#    Updated: 2022/01/25 16:46:32 by tkruger          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ SRC += $(ITYPEDIR)/ft_abs.c $(ITYPEDIR)/ft_diff.c $(ITYPEDIR)/ft_isint.c \
 
 LSTDIR = $(SDIR)/lst
 SRC += $(LSTDIR)/ft_lstadd_back.c $(LSTDIR)/ft_lstadd_front.c \
-		$(LSTDIR)/ft_lstclear.c $(LSTDIR)/ft_lstdelone.c $(LSTDIR)/ft_lstiter.c \
+		$(LSTDIR)/ft_lstclear.c $(LSTDIR)/ft_lstdelone.c $(LSTDIR)/ft_lstnode.c $(LSTDIR)/ft_lstiter.c \
 		$(LSTDIR)/ft_lstlast.c $(LSTDIR)/ft_lstmap.c $(LSTDIR)/ft_lstnew.c \
 		$(LSTDIR)/ft_lstsize.c
 
