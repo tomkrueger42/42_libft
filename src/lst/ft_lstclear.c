@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 22:47:41 by tomkrueger        #+#    #+#             */
-/*   Updated: 2021/12/03 19:42:36 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/02/09 16:46:42 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*next;
 
 	p = *lst;
-	if (!p)
+	if (p == NULL)
 		return ;
-	while (p)
+	while (p != NULL)
 	{
 		next = p->next;
 		ft_lstdelone(p, del);

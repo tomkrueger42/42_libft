@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 17:56:34 by tomkrueger        #+#    #+#             */
-/*   Updated: 2021/11/03 00:43:59 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 16:48:42 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*list;
 
-	list = malloc(sizeof(t_list));
-	if (!list)
+	list = ft_calloc(1, sizeof(t_list));
+	if (list == NULL)
 		return (NULL);
 	list->content = content;
 	list->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 18:56:46 by tomkrueger        #+#    #+#             */
-/*   Updated: 2021/12/16 15:24:19 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 18:34:50 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	if (!s)
 		return (0);
+	if (s == NULL)
+		return (write(fd, "(null)", 6));
 	while (*s)
 		i += write(fd, s++, 1);
 	return (i);

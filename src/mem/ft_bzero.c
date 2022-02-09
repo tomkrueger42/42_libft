@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 11:20:38 by tkruger           #+#    #+#             */
-/*   Updated: 2021/11/03 00:43:49 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 18:32:42 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,5 @@
 /* This function sets n amount of bytes, s is pointing to, to 0 */
 void	ft_bzero(void *s, size_t n)
 {
-	char	*str;
-
-	str = s;
-	while (n--)
-		*str++ = 0;
+	ft_memset(s, '\0', n);
 }

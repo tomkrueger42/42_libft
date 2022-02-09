@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 18:12:36 by tomkrueger        #+#    #+#             */
-/*   Updated: 2021/11/03 00:43:55 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 17:31:18 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	ft_lstsize(t_list *lst)
 {
 	int		i;
 
-	i = 1;
-	if (!lst)
+	i = 0;
+	if (lst == NULL)
 		return (0);
-	while (lst->next)
+	while (lst != NULL)
 	{
-		i++;
 		lst = lst->next;
+		i++;
 	}
 	return (i);
 }

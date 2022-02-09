@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/25 16:46:53 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/02/09 18:45:59 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int		ft_putstr_fd(char *s, int fd);
 
 /* str */
 
+size_t	ft_arrlen(char **arr);
 int		ft_atoi(const char *str);
 int		*ft_getnbrs_free(char *str);
 int		*ft_getnbrs(char *str);

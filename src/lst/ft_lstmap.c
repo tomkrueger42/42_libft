@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 11:06:00 by tomkrueger        #+#    #+#             */
-/*   Updated: 2021/11/03 00:44:02 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 16:48:18 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*newel;
 
 	newlst = 0;
-	while (lst)
+	while (lst != NULL)
 	{
 		newel = ft_lstnew(f(lst->content));
-		if (!newel)
+		if (newel == NULL)
 		{
 			ft_lstclear(&newlst, del);
 			return (newlst);

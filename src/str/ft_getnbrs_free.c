@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_getnbrs_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:18:58 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/21 19:21:40 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/02/09 18:36:08 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-int	*ft_getnbrs_free(char *str)
+int	*ft_getnbrs_free(char **numbers)
 {
-	int	*new;
+	int	*nbrs;
+	int	i;
 
-	new = ft_getnbrs(str);
-	free(str);
-	return (new);
+	nbrs = ft_getnbrs(numbers);
+	i = 0;
+	while (numbers[i] != 0)
+		free(numbers[i++]);
+	free(numbers);
+	return (nbrs);
 }

@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnode.c                                       :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 16:24:24 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 17:30:10 by tomkrueger       ###   ########.fr       */
+/*   Created: 2022/02/09 18:37:51 by tomkrueger        #+#    #+#             */
+/*   Updated: 2022/02/09 18:39:21 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-/* This f() returns the number of the node of the list */
-int	ft_lstnode(t_list *lst, t_list *node)
+size_t	ft_arrlen(char **arr)
 {
-	int	counter;
+	size_t	count;
 
-	counter = 0;
-	if (lst == NULL || node == NULL)
-		return (-1);
-	while (lst != NULL)
-	{
-		if (lst == node)
-			return (counter);
-		lst = lst->next;
-		counter++;
-	}
-	return (-1);
+	count = 0;
+	if (arr == NULL)
+		return (0);
+	while (arr[count] != 0)
+		count++;
+	return (count);
 }
