@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 15:44:54 by tkruger           #+#    #+#             */
-/*   Updated: 2021/11/03 00:42:51 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 19:48:38 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 {
 	char	*p;
 
-	p = malloc(ft_strlen(s1) + 1);
+	p = ft_calloc(ft_strlen(s1) + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	return ((char *)ft_memcpy(p, s1, ft_strlen(s1) + 1));

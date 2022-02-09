@@ -6,7 +6,7 @@
 #    By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 12:53:26 by tkruger           #+#    #+#              #
-#    Updated: 2022/02/09 18:46:13 by tomkrueger       ###   ########.fr        #
+#    Updated: 2022/02/09 20:06:04 by tomkrueger       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,9 @@ SRC += $(ITYPEDIR)/ft_abs.c $(ITYPEDIR)/ft_diff.c $(ITYPEDIR)/ft_isint.c \
 
 LSTDIR = $(SDIR)/lst
 SRC += $(LSTDIR)/ft_lstadd_back.c $(LSTDIR)/ft_lstadd_front.c \
-		$(LSTDIR)/ft_lstclear.c $(LSTDIR)/ft_lstdelone.c $(LSTDIR)/ft_lstnode.c $(LSTDIR)/ft_lstiter.c \
-		$(LSTDIR)/ft_lstlast.c $(LSTDIR)/ft_lstmap.c $(LSTDIR)/ft_lstnew.c \
-		$(LSTDIR)/ft_lstsize.c
+		$(LSTDIR)/ft_lstclear.c $(LSTDIR)/ft_lstdelone.c $(LSTDIR)/ft_lstnode.c\
+		$(LSTDIR)/ft_lstiter.c $(LSTDIR)/ft_lstlast.c $(LSTDIR)/ft_lstmap.c \
+		$(LSTDIR)/ft_lstnew.c $(LSTDIR)/ft_lstsize.c
 
 #	mem
 
@@ -62,9 +62,11 @@ SRC += $(PUTDIR)/ft_putchar_fd.c $(PUTDIR)/ft_putendl_fd.c \
 #	str
 
 STRDIR = $(SDIR)/str
-SRC += $(STRDIR)/ft_arrlen.c $(STRDIR)/ft_atoi.c $(STRDIR)/ft_getnbrs_free.c $(STRDIR)/ft_getnbrs.c $(STRDIR)/ft_itoa.c $(STRDIR)/ft_split.c \
-		$(STRDIR)/ft_strchr_int.c $(STRDIR)/ft_strchr.c $(STRDIR)/ft_strdup.c $(STRDIR)/ft_striteri.c \
-		$(STRDIR)/ft_strjoin_free.c $(STRDIR)/ft_strjoin.c $(STRDIR)/ft_strlcat.c $(STRDIR)/ft_strlcpy.c \
+SRC += $(STRDIR)/ft_arrlen.c $(STRDIR)/ft_atoi.c $(STRDIR)/ft_getnbrs_free.c\
+		$(STRDIR)/ft_getnbrs.c $(STRDIR)/ft_itoa.c $(STRDIR)/ft_split.c \
+		$(STRDIR)/ft_strchr_int.c $(STRDIR)/ft_strchr.c $(STRDIR)/ft_strdup.c\
+		$(STRDIR)/ft_striteri.c $(STRDIR)/ft_strjoin_free.c \
+		$(STRDIR)/ft_strjoin.c $(STRDIR)/ft_strlcat.c $(STRDIR)/ft_strlcpy.c \
 		$(STRDIR)/ft_strlen.c $(STRDIR)/ft_strmapi.c $(STRDIR)/ft_strncmp.c \
 		$(STRDIR)/ft_strnstr.c $(STRDIR)/ft_strrchr.c $(STRDIR)/ft_strtrim.c \
 		$(STRDIR)/ft_substr_free.c $(STRDIR)/ft_substr.c
@@ -77,10 +79,13 @@ SRC += $(STRDIR)/ft_arrlen.c $(STRDIR)/ft_atoi.c $(STRDIR)/ft_getnbrs_free.c $(S
 $(NAME):
 	@gcc $(CFLAGS) $(SRC)
 	@ar -crs $(NAME) ft_*.o get_next_line.o
+	@mkdir objs
+	@mv *.o objs/
 
 all: $(NAME)
 
 clean:
+	@rm -rf ./objs/
 	@rm -f *.o *~
 	@rm -rf *.dSYM
 

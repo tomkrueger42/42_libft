@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:03:04 by tkruger           #+#    #+#             */
-/*   Updated: 2021/12/03 17:12:29 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/02/09 20:04:39 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,23 @@ char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		i;
-	int		j;
+	int		chrs;
 	int		r;
 
 	i = 0;
 	r = 0;
-	result = malloc(sizeof(char *) * (ft_strlen(s) + 1));
-	if (result == NULL || !s)
+	if (s == NULL)
 		return (NULL);
-	while (s[i] && result)
+	result = ft_calloc(ft_count_char((char *)s, c), sizeof(char *));
+	if (result == NULL)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		j = 0;
-		while (s[i] && s[i] != c && j++ >= 0)
+		chrs = 0;
+		while (s[i] != '\0' && s[i] != c && chrs++ >= 0)
 			i++;
-		if (j)
-			result[r++] = ft_substr(s, i - j, j);
+		if (chrs > 0)
+			result[r++] = ft_substr(s, i - chrs, chrs);
 		while (s[i] && s[i] == c)
 			i++;
 	}

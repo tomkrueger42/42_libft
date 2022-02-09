@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 16:28:47 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/08 15:47:25 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 19:47:45 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strchr_int(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s && s[i])
+	while (s != NULL && s[i] != '\0')
 	{
 		if (s[i] == c)
 			return (i + 1);

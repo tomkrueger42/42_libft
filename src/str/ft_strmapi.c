@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 17:18:36 by tomkrueger        #+#    #+#             */
-/*   Updated: 2021/11/03 00:42:30 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 19:51:53 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*new;
 	int		i;
 
-	if (!s)
+	if (s == NULL)
 		return (0);
 	i = 0;
-	new = malloc(ft_strlen(s) + 1);
+	new = ft_calloc(sizeof(char), ft_strlen(s) + 1);
 	if (new == NULL)
 		return (NULL);
 	while (s[i++])

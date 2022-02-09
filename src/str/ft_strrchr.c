@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 12:38:23 by tkruger           #+#    #+#             */
-/*   Updated: 2021/11/03 00:42:17 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 20:05:32 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
-	last = 0;
-	if (!*s && c)
+	last = NULL;
+	if (*s != '\0' && c)
 		return (0);
 	while (s[i])
 	{

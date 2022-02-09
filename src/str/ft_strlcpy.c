@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:18:34 by tkruger           #+#    #+#             */
-/*   Updated: 2021/11/03 00:42:37 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 19:50:50 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, int dstsize)
 	int	counter;
 
 	counter = 0;
-	if (!dst)
+	if (dst == NULL)
 		return (0);
 	if (dstsize <= 0)
 		return (ft_strlen(src));

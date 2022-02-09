@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 18:08:59 by tkruger           #+#    #+#             */
-/*   Updated: 2021/11/03 00:42:11 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 19:54:03 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	const char	*last;
 	int			i;
 
-	if (!s1)
-		return (0);
+	if (s1 == NULL)
+		return (NULL);
 	last = s1 + ft_strlen(s1) - 1;
 	i = 0;
 	while (s1 <= last)

@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 18:45:59 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/09 20:01:47 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_toupper(int c);
 /* get_next_line */
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 42
 # endif
 
 char	*get_next_line(int fd);
@@ -89,8 +89,8 @@ int		ft_putstr_fd(char *s, int fd);
 
 size_t	ft_arrlen(char **arr);
 int		ft_atoi(const char *str);
-int		*ft_getnbrs_free(char *str);
-int		*ft_getnbrs(char *str);
+int		*ft_getnbrs_free(char **numbers);
+int		*ft_getnbrs(char **numbers);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 int		ft_strchr_int(const char *s, int c);
