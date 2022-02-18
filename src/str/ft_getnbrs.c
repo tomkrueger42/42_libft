@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 15:42:00 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 20:03:38 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/18 01:08:06 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 int	*ft_getnbrs(char **numbers)
 {
 	int		*ints;
-	int		i;
+	size_t	i;
 
 	if (numbers == NULL)
 		return (NULL);
-	i = 0;
 	ints = ft_calloc(ft_arrlen(numbers), sizeof(int));
 	if (ints == NULL)
 		return (NULL);
-	while (numbers[i] != NULL)
+	i = 0;
+	while (i < ft_arrlen(numbers))
 	{
 		if (ft_isint(numbers[i]) == false)
 		{
@@ -35,4 +35,26 @@ int	*ft_getnbrs(char **numbers)
 		i++;
 	}
 	return (ints);
+}
+
+/* This fn() calls ft_getnbrs() with the given parameter and frees it after */
+int	*ft_getnbrs_free(char **numbers)
+{
+	int	*nbrs;
+	int	i;
+
+	nbrs = ft_getnbrs(numbers);
+	i = 0;
+	while (numbers != NULL && numbers[i] != 0)
+	{
+		if (numbers[i] != NULL)
+			free(numbers[i]);
+		i++;
+	}
+	while (--i >= 0)
+		numbers[i] = NULL;
+	if (numbers != NULL)
+		free(numbers);
+	numbers = NULL;
+	return (nbrs);
 }

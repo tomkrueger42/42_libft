@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 13:01:55 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 20:05:07 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/16 13:02:08 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	new[i + j] = 0;
+	return (new);
+}
+
+/* This function calls ft_strjoin() and frees the given parameters */
+char	*ft_strjoin_free(char const *s1, char const *s2)
+{
+	char	*new;
+
+	new = ft_strjoin(s1, s2);
+	if (s1 != NULL)
+		free((void *)s1);
+	s1 = NULL;
+	if (s2 != NULL)
+		free((void *)s2);
+	s2 = NULL;
 	return (new);
 }

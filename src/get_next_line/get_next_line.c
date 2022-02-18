@@ -6,12 +6,11 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 16:44:27 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/17 17:49:16 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
-#include <stdio.h>
 
 char	*get_next_line(int fd)
 {
@@ -33,6 +32,7 @@ char	*get_next_line(int fd)
 	{
 		r = str;
 		end_of_file = 2;
+		str = NULL;
 	}
 	return (r);
 }

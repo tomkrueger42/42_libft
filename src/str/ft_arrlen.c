@@ -6,12 +6,13 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 18:37:51 by tomkrueger        #+#    #+#             */
-/*   Updated: 2022/02/09 18:47:49 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/18 01:08:33 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/* This fn() returns the length of a char array */
 size_t	ft_arrlen(char **arr)
 {
 	size_t	count;

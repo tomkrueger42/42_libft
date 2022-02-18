@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 20:01:47 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/16 13:07:56 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,18 @@ int		ft_putstr_fd(char *s, int fd);
 
 size_t	ft_arrlen(char **arr);
 int		ft_atoi(const char *str);
-int		*ft_getnbrs_free(char **numbers);
+size_t	ft_count_nbrs(const char *str);
 int		*ft_getnbrs(char **numbers);
+int		*ft_getnbrs_free(char **numbers);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
+char	**ft_split_free(char const *s, char c);
 int		ft_strchr_int(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	*ft_strjoin_free(char const *s1, char const *s2);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin_free(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, int dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, int dstsize);
 int		ft_strlen(const char *s);
@@ -107,7 +109,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
-char	*ft_substr_free(char const *s, unsigned int start, size_t len);
+char	*ft_strtrim_free(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr_free(char const *s, unsigned int start, size_t len);
 
 #endif

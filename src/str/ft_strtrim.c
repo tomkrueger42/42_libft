@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 18:08:59 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 19:54:03 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/17 17:29:35 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 			break ;
 	}
 	return (ft_substr(s1, 0, last - s1 + 1));
+}
+
+char	*ft_strtrim_free(char const *s1, char const *set)
+{
+	char	*result;
+
+	result = ft_strtrim(s1, set);
+	if (s1 != NULL)
+		free((void *)s1);
+	s1 = NULL;
+	return (result);
 }

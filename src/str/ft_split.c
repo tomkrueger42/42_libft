@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:03:04 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 20:04:39 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/18 00:25:33 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**ft_split(char const *s, char c)
 	r = 0;
 	if (s == NULL)
 		return (NULL);
-	result = ft_calloc(ft_count_char((char *)s, c), sizeof(char *));
+	result = ft_calloc(ft_count_char((char *)s, c) + 1, sizeof(char *));
 	if (result == NULL)
 		return (NULL);
 	while (s[i] != '\0')
@@ -38,5 +38,17 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	result[r] = 0;
+	return (result);
+}
+
+/* This fn() calls split with the given parameters and frees them afterwards */
+char	**ft_split_free(char const *s, char c)
+{
+	char	**result;
+
+	result = ft_split(s, c);
+	if (s != NULL)
+		free((void *)s);
+	s = NULL;
 	return (result);
 }

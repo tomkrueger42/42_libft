@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 18:08:32 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 19:55:26 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/17 16:49:30 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		new[i] = s[start + i];
 		i++;
 	}
-	new[len] = 0;
+	new[len] = '\0';
+	return (new);
+}
+
+/* This function calls ft_substr() and frees the given parameters */
+char	*ft_substr_free(char const *s, unsigned int start, size_t len)
+{
+	char	*new;
+
+	new = ft_substr(s, start, len);
+	if (s != NULL)
+		free((void *)s);
+	s = NULL;
 	return (new);
 }
