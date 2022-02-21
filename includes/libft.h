@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/16 13:07:56 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/18 15:56:05 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int		ft_putstr_fd(char *s, int fd);
 
 size_t	ft_arrlen(char **arr);
 int		ft_atoi(const char *str);
+int		ft_atoi_base(const char *str, int base);
 size_t	ft_count_nbrs(const char *str);
 int		*ft_getnbrs(char **numbers);
 int		*ft_getnbrs_free(char **numbers);

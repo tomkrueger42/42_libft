@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 18:08:32 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/17 16:49:30 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/20 15:08:42 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*new;
 	size_t	i;
 
-	if (s == NULL)
+	if (s == NULL || len == 0)
 		return (NULL);
 	new = ft_calloc(len + 1, sizeof(char));
 	if (new == NULL)

@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 18:08:59 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/17 17:29:35 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/20 15:09:04 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ft_substr(s1, 0, last - s1 + 1));
 }
 
+/* This function calls ft_strtrim() with the given parameters and frees s1 */
 char	*ft_strtrim_free(char const *s1, char const *set)
 {
 	char	*result;

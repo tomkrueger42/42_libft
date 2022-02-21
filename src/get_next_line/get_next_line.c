@@ -6,12 +6,13 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/17 17:49:16 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/20 19:51:05 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
+/* This function returns the next line of file fd. (null) if fd is empty */
 char	*get_next_line(int fd)
 {
 	static char	*str = NULL;
@@ -22,6 +23,8 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0 || end_of_file == 2)
 		return (NULL);
 	str = ft_need_for_read(fd, str, &end_of_file);
+	if (ft_strlen(str) == 0)
+		str = NULL;
 	if (ft_strchr_int(str, '\n') != -1)
 	{
 		r = ft_substr(str, 0, ft_strchr_int(str, '\n'));

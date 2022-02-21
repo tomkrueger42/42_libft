@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:03:04 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/18 00:25:33 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/20 15:08:27 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**ft_split(char const *s, char c)
 	r = 0;
 	if (s == NULL)
 		return (NULL);
-	result = ft_calloc(ft_count_char((char *)s, c) + 1, sizeof(char *));
+	result = (char **)ft_calloc(ft_count_char((char *)s, c) + 2, sizeof(char *));
 	if (result == NULL)
 		return (NULL);
 	while (s[i] != '\0')
