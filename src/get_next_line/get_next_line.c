@@ -3,39 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/20 19:51:05 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/02/25 17:01:41 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+#include <limits.h>
 
-/* This function returns the next line of file fd. (null) if fd is empty */
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+#endif
+
+/* This function returns the next line of file fd. NULL if fd is empty. Call
+get_next_line in a loop to read a file until it returns NULL */
 char	*get_next_line(int fd)
 {
-	static char	*str = NULL;
-	static int	end_of_file = 0;
+	static char	*str[OPEN_MAX];
+	static int	end_of_file[OPEN_MAX];
 	char		*r;
 
 	r = NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0 || end_of_file == 2)
+	if (fd < 0 || BUFFER_SIZE <= 0 || end_of_file[fd] == 2)
 		return (NULL);
-	str = ft_need_for_read(fd, str, &end_of_file);
-	if (ft_strlen(str) == 0)
-		str = NULL;
-	if (ft_strchr_int(str, '\n') != -1)
+	str[fd] = ft_need_for_read(fd, str[fd], &end_of_file[fd]);
+	if (ft_strlen(str[fd]) == 0)
+		str[fd] = NULL;
+	if (ft_strchr_int(str[fd], '\n') != -1)
 	{
-		r = ft_substr(str, 0, ft_strchr_int(str, '\n'));
-		str = ft_substr_free(str, ft_strchr_int(str, '\n'),
-				ft_strlen(str) - ft_strchr_int(str, '\n'));
+		r = ft_substr(str[fd], 0, ft_strchr_int(str[fd], '\n'));
+		str[fd] = ft_substr_free(str[fd], ft_strchr_int(str[fd], '\n'),
+				ft_strlen(str[fd]) - ft_strchr_int(str[fd], '\n'));
 	}
 	else
 	{
-		r = str;
-		end_of_file = 2;
-		str = NULL;
+		r = str[fd];
+		end_of_file[fd] = 2;
+		str[fd] = NULL;
 	}
 	return (r);
 }

@@ -6,7 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/21 20:56:52 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/02/25 17:01:05 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 /* get_next_line */
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
 
 char	*get_next_line(int fd);
 char	*ft_need_for_read(int fd, char *str, int *end_of_file);
