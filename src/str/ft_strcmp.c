@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 18:10:11 by tkruger           #+#    #+#             */
-/*   Updated: 2022/03/04 15:01:28 by tkruger          ###   ########.fr       */
+/*   Created: 2022/03/04 14:54:54 by tkruger           #+#    #+#             */
+/*   Updated: 2022/03/04 14:59:09 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-/* This function compares the first n characters of two strings */
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+/* This f() compares two strings */
+int	ft_strcmp(char *s1, char *s2)
 {
 	size_t	i;
 
 	i = 0;
-	if (s1 == NULL && s2 == NULL || n == 0)
+	if (s1 == NULL && s2 == NULL)
 		return (0);
 	else if (s1 == NULL && s2 != NULL)
 		return (-1);
 	else if (s1 != NULL && s2 == NULL)
 		return (1);
-	while (s1[i] == s2[i] && (n - 1) > i && s1[i])
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 		i++;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
