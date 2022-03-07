@@ -6,7 +6,7 @@
 #    By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 12:53:26 by tkruger           #+#    #+#              #
-#    Updated: 2022/03/04 14:59:48 by tkruger          ###   ########.fr        #
+#    Updated: 2022/03/07 12:57:05 by tkruger          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRC += $(LSTDIR)/ft_lstadd_back.c $(LSTDIR)/ft_lstadd_front.c \
 MEMDIR = $(SDIR)/mem
 SRC += $(MEMDIR)/ft_memchr.c $(MEMDIR)/ft_memcmp.c $(MEMDIR)/ft_memcpy.c \
 		$(MEMDIR)/ft_memmove.c $(MEMDIR)/ft_memset.c $(MEMDIR)/ft_bzero.c \
-		$(MEMDIR)/ft_calloc.c
+		$(MEMDIR)/ft_calloc.c $(MEMDIR)/ft_free_array.c
 
 #	put
 
