@@ -6,7 +6,7 @@
 /*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:18:20 by tkruger           #+#    #+#             */
-/*   Updated: 2022/03/09 02:19:51 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/03/09 02:26:44 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_strlen_free(const char *s)
 
 	c = ft_strlen(s);
 	if (s != NULL)
-		free(s);
+		free((void *)s);
 	s = NULL;
 	return (c);
 }
