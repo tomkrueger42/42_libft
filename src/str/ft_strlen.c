@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 13:18:20 by tkruger           #+#    #+#             */
-/*   Updated: 2022/01/07 17:56:47 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/03/09 02:19:51 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,17 @@ int	ft_strlen(const char *s)
 		return (0);
 	while (s[c])
 		c++;
+	return (c);
+}
+
+/* This function calls ft_strlen with the parameter and frees it afterwards */
+int	ft_strlen_free(const char *s)
+{
+	int	c;
+
+	c = ft_strlen(s);
+	if (s != NULL)
+		free(s);
+	s = NULL;
 	return (c);
 }
