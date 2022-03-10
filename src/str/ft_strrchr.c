@@ -3,32 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 12:38:23 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/09 20:05:32 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/03/10 17:57:38 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-/* This function searches the last occurence of a character in a string */
+/* This function searches for the last occurence of a char in a string and
+returns its address */
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last;
-	size_t	i;
+	int	i;
 
-	i = 0;
-	last = NULL;
-	if (*s != '\0' && c)
-		return (0);
-	while (s[i])
+	i = ft_strlen(s);
+	while (s != NULL && i >= 0)
 	{
 		if (s[i] == c)
-			last = (char *)&s[i];
-		i++;
+			return ((char *)s + i);
+		i--;
 	}
-	if (c == 0 && !s[i])
-		last = (char *)&s[i];
-	return (last);
+	return (NULL);
+}
+
+/* This function searches for the first occurence of a char in a string and
+returns its position */
+int	ft_strrchr_int(const char *s, int c)
+{
+	if (ft_strrchr(s, c) == NULL)
+		return (-1);
+	else
+		return (ft_strrchr(s, c) - s);
 }

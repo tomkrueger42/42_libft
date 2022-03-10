@@ -6,7 +6,7 @@
 #    By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/21 12:53:26 by tkruger           #+#    #+#              #
-#    Updated: 2022/03/07 12:57:05 by tkruger          ###   ########.fr        #
+#    Updated: 2022/03/10 17:13:31 by tkruger          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ SRC += $(PUTDIR)/ft_putchar_fd.c $(PUTDIR)/ft_putendl_fd.c \
 STRDIR = $(SDIR)/str
 SRC += $(STRDIR)/ft_arrlen.c $(STRDIR)/ft_atoi.c $(STRDIR)/ft_count_nbrs.c \
 		$(STRDIR)/ft_getnbrs.c $(STRDIR)/ft_itoa.c $(STRDIR)/ft_split.c \
-		$(STRDIR)/ft_strchr_int.c $(STRDIR)/ft_strchr.c $(STRDIR)/ft_strcmp.c $(STRDIR)/ft_strdup.c\
+		$(STRDIR)/ft_strchr.c $(STRDIR)/ft_strcmp.c $(STRDIR)/ft_strdup.c\
 		$(STRDIR)/ft_striteri.c \
 		$(STRDIR)/ft_strjoin.c $(STRDIR)/ft_strlcat.c $(STRDIR)/ft_strlcpy.c \
 		$(STRDIR)/ft_strlen.c $(STRDIR)/ft_strmapi.c $(STRDIR)/ft_strncmp.c \

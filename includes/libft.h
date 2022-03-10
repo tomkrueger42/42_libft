@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:52:56 by tkruger           #+#    #+#             */
-/*   Updated: 2022/03/09 02:23:59 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/03/10 17:26:08 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
+int		ft_strrchr_int(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strtrim_free(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
