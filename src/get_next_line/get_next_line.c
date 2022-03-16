@@ -6,7 +6,7 @@
 /*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/02/25 17:01:41 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/03/16 11:11:37 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ char	*get_next_line(int fd)
 		str[fd] = NULL;
 	if (ft_strchr_int(str[fd], '\n') != -1)
 	{
-		r = ft_substr(str[fd], 0, ft_strchr_int(str[fd], '\n'));
-		str[fd] = ft_substr_free(str[fd], ft_strchr_int(str[fd], '\n'),
+		r = ft_substr(str[fd], 0, ft_strchr_int(str[fd], '\n') + 1);
+		str[fd] = ft_substr_free(str[fd], ft_strchr_int(str[fd], '\n') + 1,
 				ft_strlen(str[fd]) - ft_strchr_int(str[fd], '\n'));
 	}
 	else
@@ -63,7 +63,7 @@ char	*ft_need_for_read(int fd, char *str, int *end_of_file)
 			return (NULL);
 		}
 		buf[read_value] = '\0';
-		if (ft_strchr_int(buf, '\0') < BUFFER_SIZE && fd != 1)
+		if (ft_strchr_int(buf, '\0') + 1 < BUFFER_SIZE && fd != 1)
 			*end_of_file = 1 ;
 		if (str == NULL)
 			str = buf;
