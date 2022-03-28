@@ -31,10 +31,9 @@ int	ft_atoi_base(const char *str, int base)
 	while (*str != '\0' && ft_iswhitespace(*str))
 		str++;
 	if (*str == '-')
-	{
 		sign = -1;
+	if (*str == '-' || *str == '+')
 		str++;
-	}
 	if (*str != '\0' && *str + 1 != '\0' && *str == '0'
 		&& ft_tolower(*str + 1) == 'x')
 		str += 2;
