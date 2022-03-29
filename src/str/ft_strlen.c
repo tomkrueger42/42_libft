@@ -31,8 +31,6 @@ int	ft_strlen_free(const char *s)
 	int	c;
 
 	c = ft_strlen(s);
-	if (s != NULL)
-		free((void *)s);
-	s = NULL;
+	ft_free((void **)&s);
 	return (c);
 }

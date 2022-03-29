@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for size_t
+#include <stddef.h>
 
 /* This function count all the numbers that occur in a string, even hexadec */
 size_t	ft_count_nbrs(const char *str)

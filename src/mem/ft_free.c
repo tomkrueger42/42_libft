@@ -11,10 +11,14 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for free(3)
+#include <stdlib.h>
 
 void	ft_free(void **ptr)
 {
 	if (ptr != NULL && *ptr != NULL)
+	{
 		free(*ptr);
-	*ptr = NULL;
+		*ptr = NULL;
+	}
 }

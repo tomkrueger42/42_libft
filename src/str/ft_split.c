@@ -47,8 +47,6 @@ char	**ft_split_free(char const *s, char c)
 	char	**result;
 
 	result = ft_split(s, c);
-	if (s != NULL)
-		free((void *)s);
-	s = NULL;
+	ft_free((void **)&s);
 	return (result);
 }

@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for size_t
+#include <stddef.h>
 
 /* This fn() returns the length of a char array */
 size_t	ft_arrlen(char **arr)

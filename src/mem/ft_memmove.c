@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for size_t
+#include <stddef.h>
 
 /* The function moves len bytes from src to dst lossless 
 when dst and src overlap */

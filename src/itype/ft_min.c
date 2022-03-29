@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for va_list
+#include <stdarg.h>
+// for INT32_MAX
+#include <stdlib.h>
 
 int	ft_min(int count, ...)
 {

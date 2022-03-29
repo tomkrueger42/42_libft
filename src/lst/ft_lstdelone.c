@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for free(3)
+#include <stdlib.h>
 
 /* This function deletes one element using void (*del)(void *) */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))

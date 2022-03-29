@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for size_t
+#include <stddef.h>
 
 void	ft_free_array(char ***arr)
 {
@@ -19,13 +21,10 @@ void	ft_free_array(char ***arr)
 
 	parser = *arr;
 	i = 0;
-	while (parser[i] != NULL)
+	while (arr != NULL && parser != NULL && parser[i] != NULL)
 	{
-		free(parser[i]);
-		parser[i] = NULL;
-		i++;
+		ft_free((void **)&parser[i++]);
 	}
-	if (parser != NULL)
-		free(parser);
-	parser = NULL;
+	ft_free((void **)parser);
+	arr = NULL;
 }

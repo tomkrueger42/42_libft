@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for write(2)
+#include <unistd.h>
 
 /* This function writes an integer to filedescriptor fd */
 int	ft_putnbr_fd(int n, int fd)

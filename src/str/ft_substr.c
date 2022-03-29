@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for size_t
+#include <stddef.h>
 
 /* This function allocates memory where it stores a substring of a string */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -44,8 +46,6 @@ char	*ft_substr_free(char const *s, unsigned int start, size_t len)
 	char	*new;
 
 	new = ft_substr(s, start, len);
-	if (s != NULL)
-		free((void *)s);
-	s = NULL;
+	ft_free((void **)&s);
 	return (new);
 }

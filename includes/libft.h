@@ -13,12 +13,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+// for size_t
 # include <stddef.h>
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
+// for bool
 # include <stdbool.h>
-# include <stdint.h>
 
 typedef struct s_list
 {

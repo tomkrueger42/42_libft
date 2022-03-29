@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for malloc(3)
+#include <stdlib.h>
+// for size_t
+#include <stddef.h>
 
 /* This function allocates memory and gives the bytes allocated the value 0 */
 void	*ft_calloc(size_t count, size_t size)

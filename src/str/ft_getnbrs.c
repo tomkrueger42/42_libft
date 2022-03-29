@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for free(3)
+#include <stdlib.h>
+// for bool
+#include <stdbool.h>
 
 /* This f() extracts all integers from a 2D char array */
 int	*ft_getnbrs(char **numbers)
@@ -41,20 +45,8 @@ int	*ft_getnbrs(char **numbers)
 int	*ft_getnbrs_free(char **numbers)
 {
 	int	*nbrs;
-	int	i;
 
 	nbrs = ft_getnbrs(numbers);
-	i = 0;
-	while (numbers != NULL && numbers[i] != 0)
-	{
-		if (numbers[i] != NULL)
-			free(numbers[i]);
-		i++;
-	}
-	while (--i >= 0)
-		numbers[i] = NULL;
-	if (numbers != NULL)
-		free(numbers);
-	numbers = NULL;
+	ft_free_array(&numbers);
 	return (nbrs);
 }

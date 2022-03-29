@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for size_t
+#include <stddef.h>
 
 /* The function compares the first n bytes of s1 and s2 */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)

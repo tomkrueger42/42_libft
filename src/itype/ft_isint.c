@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for free(3)
+#include <stdlib.h>
+// for bool
+#include <stdbool.h>
 
 bool	ft_isint(char *str)
 {

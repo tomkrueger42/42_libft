@@ -49,8 +49,6 @@ char	*ft_strtrim_free(char const *s1, char const *set)
 	char	*result;
 
 	result = ft_strtrim(s1, set);
-	if (s1 != NULL)
-		free((void *)s1);
-	s1 = NULL;
+	ft_free((void **)&s1);
 	return (result);
 }

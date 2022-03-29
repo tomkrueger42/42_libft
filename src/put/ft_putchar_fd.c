@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for write(2)
+#include <unistd.h>
 
 /* This function writes char c onto filedescriptor fd */
 int	ft_putchar_fd(char c, int fd)

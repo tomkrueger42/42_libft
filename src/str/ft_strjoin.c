@@ -45,11 +45,7 @@ char	*ft_strjoin_free(char const *s1, char const *s2)
 	char	*new;
 
 	new = ft_strjoin(s1, s2);
-	if (s1 != NULL)
-		free((void *)s1);
-	s1 = NULL;
-	if (s2 != NULL)
-		free((void *)s2);
-	s2 = NULL;
+	ft_free((void **)&s1);
+	ft_free((void **)&s2);
 	return (new);
 }

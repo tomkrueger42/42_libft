@@ -11,6 +11,11 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for read(2)
+#include <unistd.h>
+// for free(3)
+#include <stdlib.h>
+// for OPEN_MAX
 #include <limits.h>
 
 #ifndef BUFFER_SIZE

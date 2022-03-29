@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for write(2)
+#include <unistd.h>
 
 /* This function writes a string followed by a newline character to 
 filedescriptor fd */

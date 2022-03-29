@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+// for malloc(3)
+#include <stdlib.h>
 
 static char	*ft_itoa_recu(int n, char *result, int counter)
 {
