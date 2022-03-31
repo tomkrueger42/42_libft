@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
+/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 12:56:01 by tkruger           #+#    #+#             */
-/*   Updated: 2022/03/09 02:24:10 by tomkrueger       ###   ########.fr       */
+/*   Updated: 2022/03/31 18:58:27 by tkruger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ void	ft_free_array(char ***arr)
 	{
 		ft_free((void **)&parser[i++]);
 	}
-	ft_free((void **)parser);
-	arr = NULL;
+	ft_free((void **)arr);
 }
