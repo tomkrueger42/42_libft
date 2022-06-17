@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkruger <tkruger@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tomkrueger <tomkrueger@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:47:28 by tkruger           #+#    #+#             */
-/*   Updated: 2022/03/16 11:11:37 by tkruger          ###   ########.fr       */
+/*   Updated: 2022/06/17 15:32:05 by tomkrueger       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 #include <unistd.h>
 // for free(3)
 #include <stdlib.h>
-// for OPEN_MAX
-#include <limits.h>
+// for OPEN_MAX on different operating systems
+#ifdef __linux__
+# define OPEN_MAX 1024
+#else
+# include <limits.h>
+#endif
 
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 42
